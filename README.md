@@ -4,6 +4,7 @@ Como librerías externas se han utilizado react-roter-dom https://reactrouter.co
 
 Aparace una input de búsqueda en el que al escribir los nombres de un personaje aparece una ficha con su nombre e imagen.
 Clicando en cada ficha se obtiene más información del personaje.
+En cuanto a la paginación está realiazad mediante el hook de React useContext que e en este caso nos permite acceder al setState desde el componente hijo "Select Page".
 
 ### `npm start`
 
