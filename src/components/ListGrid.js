@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { getCharacters } from "../API";
+
+import { /* getCharacters, */ getCharactersByPage } from "../API";
+import { UserContext } from "./Context/userContext";
 import { ItemGrid } from "./ItemGrid";
 import { SearchCharacters } from "./SearchCharacters";
+import { SelectPage } from "./SelectPage";
 
 export const ListGrid = () => {
   const [state, setState] = useState({
@@ -9,18 +12,31 @@ export const ListGrid = () => {
     characters: [],
     filteredCharacter: "",
     showGrid: false,
+    page: 1,
+    data: {},
   });
+  const {
+    isLoading,
+    characters,
+    filteredCharacter,
+    showGrid,
+    data,
+    page,
+  } = state;
+
   useEffect(() => {
-    getCharacters().then((data) => {
+    getCharactersByPage(page).then((data) => {
       setState({
         isLoading: false,
-        characters: data,
+        characters: data.results,
         filteredCharacter: "",
-        showGrid: false,
+        showGrid: true,
+        data: data,
+        page: page,
       });
     });
-  }, []);
-  const { isLoading, characters, filteredCharacter, showGrid } = state;
+  }, [page]);
+
   const handleFilterChange = (event) => {
     setState({
       ...state,
@@ -42,6 +58,9 @@ export const ListGrid = () => {
     <div className="container">
       <h1 className="list-grid-title">Rick &amp; Morty</h1>
       <div className="grid-container">
+        <UserContext.Provider value={{ state, setState }}>
+          <SelectPage data={data} />
+        </UserContext.Provider>
         <SearchCharacters
           handleFilterChange={handleFilterChange}
           filteredCharacter={filteredCharacter}

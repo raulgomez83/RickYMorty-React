@@ -1,10 +1,18 @@
 const axios = require("axios").default;
 const DATA = "https://rickandmortyapi.com/api/character";
 
-export const getCharacters = async () => {
+/* export const getCharacters = async () => {
   try {
     const res = await axios.get(DATA);
     return res.data.results;
+  } catch (error) {
+    throw error;
+  }
+}; */
+export const getCharactersByPage = async (page) => {
+  try {
+    const res = await axios.get(`${DATA}/?page=${page}`);
+    return res.data;
   } catch (error) {
     throw error;
   }
