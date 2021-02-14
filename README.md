@@ -2,8 +2,8 @@
 
 Como librerías externas se han utilizado react-roter-dom https://reactrouter.com/web/guides/quick-start y axios https://www.npmjs.com/package/axios.
 
-Aparace una input de búsqueda en el que al escricir los nombres de un personaje aparece su nombre y el de sus alter egos y imagen.
-Clicando en cada uno se obtien más información de cada uno.
+Aparace una input de búsqueda en el que al escribir los nombres de un personaje aparece una ficha con su nombre e imagen.
+Clicando en cada ficha se obtiene más información del personaje.
 
 ### `npm start`
 
