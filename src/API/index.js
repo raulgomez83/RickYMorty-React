@@ -9,10 +9,10 @@ export const getCharacters = async () => {
     throw error;
   }
 };
+
 export const getCharacterDetail = async ({ idCharacter }) => {
   try {
     const character = await axios.get(`${DATA}/${idCharacter}`);
-    console.log(character.data);
     return character.data;
   } catch (error) {
     throw new Error("No se ha encontrado ningún personaje ");

@@ -28,9 +28,9 @@ export const ItemDetail = () => {
       <div className="detail-container">
         <img src={character.image} alt={character.name} />
         <h2>{character.name}</h2>
-        <h3>{character.gender}</h3>
-        <h3>{character.species}</h3>
-        <h3>{character.status}</h3>
+        <h3>Género:{character.gender}</h3>
+        <h3>Especie: {character.species}</h3>
+        <h3>Estado: {character.status}</h3>
         <h3>Origin: {character.origin.name}</h3>
         <h3>Location: {character.location.name}</h3>
       </div>
