@@ -2,11 +2,14 @@
 
 Como librerías externas se han utilizado react-roter-dom https://reactrouter.com/web/guides/quick-start y axios https://www.npmjs.com/package/axios.
 
-## `npm start`
+Aparace una input de búsqueda en el que al escricir los nombres de un personaje aparece su nombre y el de sus alter egos y imagen.
+Clicando en cada uno se obtien más información de cada uno.
 
-## `npm test`
+### `npm start`
 
-## `npm run build`
+### `npm test`
+
+### `npm run build`
 
 ### `npm run eject` (No tocar)
 
