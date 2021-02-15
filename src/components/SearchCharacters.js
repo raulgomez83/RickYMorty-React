@@ -7,9 +7,11 @@ export const SearchCharacters = ({ filteredCharacter, handleFilterChange }) => {
       <form>
         <input
           type="search"
-          placeholder="Busca tu personaje favorito entre..."
+          placeholder="Busca tu personaje favorito..."
           value={filteredCharacter}
           onChange={handleFilterChange}
+          minLength="2"
+          maxLength="100"
         />
       </form>
     </div>

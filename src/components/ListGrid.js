@@ -53,23 +53,22 @@ export const ListGrid = () => {
   if (isLoading) {
     return <p>Cargando...</p>;
   }
-
   return (
-    <div className="container">
-      <h1 className="list-grid-title">Rick &amp; Morty</h1>
-      <div className="grid-container">
-        <UserContext.Provider value={{ state, setState }}>
+    <UserContext.Provider value={{ state, setState }}>
+      <div className="container">
+        <h1 className="list-grid-title">Rick &amp; Morty</h1>
+        <div className="grid-container">
+          <SearchCharacters
+            handleFilterChange={handleFilterChange}
+            filteredCharacter={filteredCharacter}
+          />
           <SelectPage data={data} />
-        </UserContext.Provider>
-        <SearchCharacters
-          handleFilterChange={handleFilterChange}
-          filteredCharacter={filteredCharacter}
-        />
-        {showGrid &&
-          resultFilteredCharacters.map((character) => {
-            return <ItemGrid key={character.id} data={character} />;
-          })}
+          {showGrid &&
+            resultFilteredCharacters.map((character) => {
+              return <ItemGrid key={character.id} data={character} />;
+            })}
+        </div>
       </div>
-    </div>
+    </UserContext.Provider>
   );
 };

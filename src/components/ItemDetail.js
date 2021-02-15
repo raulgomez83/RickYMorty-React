@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { getCharacterDetail } from "../API";
 import { Loading } from "./Loanding";
 
-export const ItemDetail = () => {
+export const ItemDetail = ({ history }) => {
   let { id } = useParams();
+
   const [state, setState] = useState({ isLoading: true });
   const { isLoading, character, error } = state;
+
   useEffect(() => {
     setState({ isLoading: true });
     getCharacterDetail({ idCharacter: id })
@@ -34,6 +36,9 @@ export const ItemDetail = () => {
         <h3>Origin: {character.origin.name}</h3>
         <h3>Location: {character.location.name}</h3>
       </div>
+      <Link to="/">
+        <button>Volver</button>
+      </Link>
     </div>
   );
 };

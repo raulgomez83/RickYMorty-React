@@ -4,7 +4,6 @@ import { UserContext } from "./Context/userContext";
 export const SelectPage = ({ data }) => {
   const { state, setState } = useContext(UserContext);
   const { page } = state;
-  console.log(state);
   const handlePrevPageChange = () => {
     if (page > 1) {
       setState({ ...state, page: page - 1 });
