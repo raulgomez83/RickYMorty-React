@@ -1,5 +1,5 @@
 # Proyecto creado como práctica en las llamadas a una API y el uso de hooks 
-##(useState, useEffect, useContext)
+## (useState, useEffect, useContext)
 
 Como librerías externas se han utilizado react-roter-dom https://reactrouter.com/web/guides/quick-start y axios https://www.npmjs.com/package/axios.
 
