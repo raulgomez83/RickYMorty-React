@@ -7,6 +7,9 @@ export const AppRoute = () => {
   return (
     <Router>
       <div>
+        <div className="bg"></div>
+        <div className="bg bg2"></div>
+        <div className="bg bg3"></div>
         <Switch>
           <Route exact path="/" component={ListGrid} />
           <Route exact path="/:id" component={ItemDetail} />
