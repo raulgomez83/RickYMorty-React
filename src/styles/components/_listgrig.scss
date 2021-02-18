@@ -1,0 +1,21 @@
+.img--list {
+  margin-top: 1rem;
+  max-width: 90%;
+}
+.container {
+  @include justify;
+}
+.listgrid__container {
+  background-image: linear-gradient(
+    180deg,
+    #b6ff8b 0,
+    #9ff991 12.5%,
+    #87f095 25%,
+    #6ee599 37.5%,
+    #55d89a 50%,
+    #3acb9a 62.5%,
+    #19bf9b 75%,
+    #00b59c 87.5%,
+    #00ac9d 100%
+  );
+}

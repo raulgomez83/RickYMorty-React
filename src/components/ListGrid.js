@@ -5,8 +5,10 @@ import { UserContext } from "./Context/userContext";
 import { ItemGrid } from "./ItemGrid";
 import { SearchCharacters } from "./SearchCharacters";
 import { SelectPage } from "./SelectPage";
+import logo from "../images/logorick.png";
 
 export const ListGrid = () => {
+  const logotitulo = logo;
   const [state, setState] = useState({
     isLoading: true,
     characters: [],
@@ -55,14 +57,14 @@ export const ListGrid = () => {
   }
   return (
     <UserContext.Provider value={{ state, setState }}>
-      <div className="container">
-        <h1 className="list-grid-title">Rick &amp; Morty</h1>
+      <div className="container listgrid__container">
+        <img className="img--list" src={logotitulo} alt="logo Rick y Morty" />
+        <SearchCharacters
+          handleFilterChange={handleFilterChange}
+          filteredCharacter={filteredCharacter}
+        />
+        <SelectPage data={data} />
         <div className="grid-container">
-          <SearchCharacters
-            handleFilterChange={handleFilterChange}
-            filteredCharacter={filteredCharacter}
-          />
-          <SelectPage data={data} />
           {showGrid &&
             resultFilteredCharacters.map((character) => {
               return <ItemGrid key={character.id} data={character} />;

@@ -15,10 +15,13 @@ export const SelectPage = ({ data }) => {
     }
   };
   return (
-    <div>
-      <button onClick={handlePrevPageChange}>&lt;prev</button>
-
-      <button onClick={handleNextPageChange}>&gt;next</button>
+    <div className="multi-button">
+      <button id="btn" onClick={handlePrevPageChange}>
+        &lt;prev
+      </button>
+      <button id="btn" onClick={handleNextPageChange}>
+        next&gt;
+      </button>
     </div>
   );
 };

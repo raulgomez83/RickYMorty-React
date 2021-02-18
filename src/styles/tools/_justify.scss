@@ -1,0 +1,14 @@
+@mixin justify() {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+/* @mixin justify($vertical-align: center) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: $vertical-align;
+  justify-content: space-between;
+}
+ */

@@ -3,9 +3,9 @@ import { NavLink } from "react-router-dom";
 
 export const ItemGrid = ({ data }) => {
   return (
-    <NavLink to={`/${data.id}`}>
-      <img src={data.image} alt={data.name} />
-      <p>{data.name}</p>
+    <NavLink className="link item-container" to={`/${data.id}`}>
+      <img className="img--item" src={data.image} alt={data.name} />
+      <h2>{data.name}</h2>
     </NavLink>
   );
 };

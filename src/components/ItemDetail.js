@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { getCharacterDetail } from "../API";
 import { Loading } from "./Loanding";
 
-export const ItemDetail = ({ history }) => {
+export const ItemDetail = () => {
   let { id } = useParams();
 
   const [state, setState] = useState({ isLoading: true });
@@ -37,7 +37,7 @@ export const ItemDetail = ({ history }) => {
         <h3>Location: {character.location.name}</h3>
       </div>
       <Link to="/">
-        <button>Volver</button>
+        <button className="btn">Volver</button>
       </Link>
     </div>
   );
