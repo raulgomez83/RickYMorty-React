@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { getCharacterDetail } from "../API";
+import { Header } from "./Header";
 import { Loading } from "./Loanding";
 
 export const ItemDetail = () => {
@@ -26,19 +27,34 @@ export const ItemDetail = () => {
     return <Loading message={`Cargando video ${id} ...`} />;
   }
   return (
-    <div>
-      <div className="detail-container">
-        <img src={character.image} alt={character.name} />
+    <div className="container">
+      <Header />
+      <img
+        className="img__item--detail"
+        src={character.image}
+        alt={character.name}
+      />
+      <div className="container--detail">
         <h2>{character.name}</h2>
-        <h3>Género:{character.gender}</h3>
-        <h3>Especie: {character.species}</h3>
-        <h3>Estado: {character.status}</h3>
-        <h3>Origin: {character.origin.name}</h3>
-        <h3>Location: {character.location.name}</h3>
+        <h3>
+          Género: <b>{character.gender}</b>
+        </h3>
+        <h3>
+          Especie: <b> {character.species}</b>
+        </h3>
+        <h3>
+          Estado: <b> {character.status}</b>
+        </h3>
+        <h3>
+          Origin: <b> {character.origin.name}</b>
+        </h3>
+        <h3>
+          Location: <b> {character.location.name}</b>
+        </h3>
       </div>
-      <Link to="/">
-        <button className="btn">Volver</button>
-      </Link>
+      <NavLink className="multi-button detail" to="/">
+        <button className="detail">Volver</button>
+      </NavLink>
     </div>
   );
 };

@@ -1,0 +1,11 @@
+.img__item {
+  min-width: 12rem;
+  max-width: 15rem;
+  &--detail {
+    margin: 1rem;
+  }
+}
+.container__detail {
+  color: $violet;
+  padding: 1rem;
+}

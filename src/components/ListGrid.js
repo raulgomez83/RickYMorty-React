@@ -2,13 +2,12 @@ import React, { useEffect, useState } from "react";
 
 import { /* getCharacters, */ getCharactersByPage } from "../API";
 import { UserContext } from "./Context/userContext";
+import { Header } from "./Header";
 import { ItemGrid } from "./ItemGrid";
 import { SearchCharacters } from "./SearchCharacters";
 import { SelectPage } from "./SelectPage";
-import logo from "../images/logorick.png";
 
 export const ListGrid = () => {
-  const logotitulo = logo;
   const [state, setState] = useState({
     isLoading: true,
     characters: [],
@@ -57,13 +56,14 @@ export const ListGrid = () => {
   }
   return (
     <UserContext.Provider value={{ state, setState }}>
-      <div className="container listgrid__container">
-        <img className="img--list" src={logotitulo} alt="logo Rick y Morty" />
+      <div className="container ">
+        <Header />
         <SearchCharacters
           handleFilterChange={handleFilterChange}
           filteredCharacter={filteredCharacter}
         />
         <SelectPage data={data} />
+
         <div className="grid-container">
           {showGrid &&
             resultFilteredCharacters.map((character) => {

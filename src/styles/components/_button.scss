@@ -1,16 +1,10 @@
-body {
-  height: 100vh;
-  margin: 0;
-  display: grid;
-  place-items: center;
-}
 .multi-button {
   filter: drop-shadow(3px 10px 15px rgba(0, 0, 0, 0.45));
-  margin: 1rem;
+  margin: 1rem 0 3rem;
 }
 .multi-button button {
-  height: 2rem;
-  width: 6rem;
+  min-height: 3rem;
+  min-width: 8rem;
   background: linear-gradient(to bottom, $pink, $violet);
   font-weight: bold;
   color: white;
@@ -33,4 +27,7 @@ button:hover {
 button:active {
   filter: none;
   transform: scale(0.95);
+}
+.detail {
+  border-radius: 20px !important;
 }
